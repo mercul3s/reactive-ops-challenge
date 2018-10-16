@@ -1,10 +1,17 @@
 ## ReactiveOps Tech Challenge Solution
 
-### Prerequisites 
+### About the solution
+I wrote a terraform script that provisions a security group and aws t2.micro
+  instance. The security group restricts ports to only allow web and ssh
+  traffic. The t2.micro instance is configured with a `null resource` that
+  installs docker, downloads a pre-built webserver container, and then runs the
+  docker container. The docker container is configured to build a super simple
+  go http application, and then run it on start.
+
+### How to run the sample 
 To get up and running, you'll need to clone or fork this repository, and then
 install Docker and Terraform. Both have builds available for mac, linux, and
 windows:
-* [docker](https://docs.docker.com/install/#supported-platforms) and
 * [Terraform](https://www.terraform.io/intro/getting-started/install.html)
 * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/installing.html)
 (or brew install if using a mac)
