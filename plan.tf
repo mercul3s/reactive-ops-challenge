@@ -55,7 +55,7 @@ resource "aws_security_group" "webserver" {
 
 // Define the infrastructure requirements for the webserver.
 resource "aws_instance" "webserver" {
-    ami           = "ami-51537029"
+    ami           = "ami-0773391ae604c49a4"
     instance_type = "t2.micro"
     associate_public_ip_address = true
     key_name = "${var.user_name}" 
@@ -68,7 +68,6 @@ resource "aws_instance" "webserver" {
     tags {
         Name = "${local.account_name}.tech_challenge"
     }
-   
     // Associate the server with the security group.
     vpc_security_group_ids = ["${aws_security_group.webserver.id}"]
 }

@@ -1,3 +1,5 @@
 .envrc
 *credentials*
 *.pem
+.terraform
+terraform*
